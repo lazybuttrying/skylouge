@@ -5,7 +5,9 @@ CONTENT_DIR = os.path.join(BASE_DIR, "content/models")
 DIST_DIR = os.path.join(BASE_DIR, "dist")
 ASSETS_DIR = os.path.join(BASE_DIR, "assets")
 
-SITE_URL = "https://lazybuttrying.github.io/skylogue"
+# Dynamically adapt to repo name (skylouge vs skylogue) in GitHub Actions or locally
+repo_slug = os.environ.get("GITHUB_REPOSITORY", "").split("/")[-1] if os.environ.get("GITHUB_REPOSITORY") else "skylouge"
+SITE_URL = os.environ.get("SITE_URL", f"https://lazybuttrying.github.io/{repo_slug}")
 SITE_TITLE = "SKYLOGUE | Scale Aircraft & Military Aviation Database"
 SITE_DESC = "The definitive collector's wiki & database for diecast aircraft, military aviation history, and scale mold analysis."
 
