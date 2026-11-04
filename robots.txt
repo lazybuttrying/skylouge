@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lazybuttrying.github.io/skylouge/sitemap.xml
